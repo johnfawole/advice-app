@@ -1,6 +1,14 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). I learned how to build it from [Jonas](https://www.udemy.com/course/the-ultimate-react-course/learn/lecture/35882526#overview).
+
+## What This App Does
+If you deploy this app on Vercel, you will be able to click on a button to get random pieces of advice.
+
+## What I Learned 
+I learned two basic things:
+- how to fetch an API
+- state management
 
 ## Available Scripts
 
