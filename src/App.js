@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+    import {useEffect, useState} from 'react';
 
-function App() {
+export default function App() {
+  const [advice, setAdvice] = useState("");
+  const [count, setCount] = useState(0);
+
+  async function adviceMe() {
+    const res = await fetch("https://api.adviceslip.com/advice");
+    const data = await res.json();
+    setAdvice(data.slip.advice);
+    setCount((c) => c + 1);
+  }
+
+    useEffect(function() {
+      adviceMe();
+    }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div>
+      <h1>{advice}</h1>
+       <button onClick={adviceMe}>Tell Me A Wise Saying That Applies to my Reality</button>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          So far, you have read <strong>{count}</strong> pieces of advice.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
-
-export default App;
